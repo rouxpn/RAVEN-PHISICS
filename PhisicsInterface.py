@@ -220,7 +220,10 @@ class Phisics(CodeInterfaceBase):
     #print (workingDir)
     #print (output) 
     #outfile = os.path.join(workingDir,output+'.o')
+    splitWorkDir = workingDir.split('/')
+    pertNumber = splitWorkDir[-1]
     outputobj=phisicsdata.phisicsdata(output, workingDir)
+    return "keff"+str(pertNumber).strip()
     #if outputobj.hasAtLeastMinorData(): outputobj.writeCSV(os.path.join(workingDir,output+'.csv'))
     #else: raise IOError('Relap5 output file '+ command.split('-o')[0].split('-i')[-1].strip()+'.o' + ' does not contain any minor edits. It might be crashed!')
 
